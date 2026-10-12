@@ -4,8 +4,8 @@
 const asset = (path: string) => import.meta.env.BASE_URL + path
 
 export const birthday = {
-  name: 'Nome',
-  signature: 'Seu nome',
+  name: 'Rafa',
+  signature: 'Jibran',
   title: 'Um lugar feito para você',
 
   intro: {
@@ -29,44 +29,44 @@ export const birthday = {
 
   points: {
     flower: {
-      message: 'Algumas pessoas simplesmente deixam os lugares mais bonitos quando chegam.',
+      message: 'Essa flor tá aqui só pra desejar que seu novo ano seja leve e cheio de coisas boas.',
       button: 'guardar ✨',
     },
     star: {
-      message: 'Algumas pessoas aparecem por acaso e acabam virando uma parte muito boa da história.',
+      message: 'Um desejo de aniversário: que esse ano te surpreenda, do jeito bom.',
       button: 'guardar ✨',
     },
-    camera: {
-      message: 'Uma memória mora aqui.',
-      photo: asset('memories/photo-1.jpg'),
-      placeholder: 'coloque uma foto aqui',
+    book: {
+      message: 'Capítulo novo começando. Que venham histórias boas, risadas e algumas aventuras pelo caminho.',
       button: 'guardar ✨',
     },
     gift: {
-      lines: ['Eu podia simplesmente ter escrito feliz aniversário...', '...mas isso seria fácil demais.'],
+      lines: [
+        'Eu podia simplesmente ter mandado um "feliz aniversário" no WhatsApp...',
+        '...mas achei que valia fazer algo um pouco mais criativo.',
+      ],
       button: 'guardar ✨',
     },
   },
 
   final: {
     lines: [
-      'Parabéns.',
-      'Hoje o mundo ficou oficialmente mais velho...',
-      '...mas ainda bem que ganhou você nele.',
+      'Parabéns!',
+      'Mais um ano de histórias pra conta...',
+      '...e que esse venha cheio das boas.',
     ],
     // {name} é substituído pelo nome acima
-    headline: 'Feliz aniversário, {name} ❤️',
-    letterButton: 'tem uma última coisa 💌',
+    headline: 'Feliz aniversário, {name}! 🎉',
+    letterButton: 'tem um bilhete pra você ✉️',
   },
 
   letter: {
     paragraphs: [
-      'Eu poderia tentar colocar tudo em uma mensagem, mas provavelmente ainda faltaria alguma coisa.',
-      'Então fiz esse pequeno lugar.',
-      'Para te lembrar que hoje não é só mais um dia.',
-      'É o seu dia.',
-      'Espero que esse novo ano te traga histórias bonitas, lugares novos, pessoas boas e muitos motivos para sorrir.',
-      'Feliz aniversário ❤️',
+      '{name},',
+      'A gente ainda tá se conhecendo, mas deu vontade de fazer algo diferente de só mandar um parabéns.',
+      'Então montei esse pequeno lugar pra te desejar um dia leve, divertido e com gente boa por perto.',
+      'Que esse novo ano venha com muitas risadas, lugares novos e boas surpresas.',
+      'Feliz aniversário! 🎉',
     ],
     close: 'fechar',
   },
@@ -106,4 +106,6 @@ export const birthday = {
   },
 }
 
-export const headline = birthday.final.headline.replace('{name}', birthday.name)
+const withName = (text: string) => text.replace('{name}', birthday.name)
+export const headline = withName(birthday.final.headline)
+export const letterParagraphs = birthday.letter.paragraphs.map(withName)

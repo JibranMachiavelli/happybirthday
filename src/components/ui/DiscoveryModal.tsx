@@ -2,19 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { birthday } from '../../config/birthday'
 import { useExperience, type PointId } from '../../stores/useExperience'
 
-function Photo() {
-  const [state, setState] = useState<'loading' | 'ok' | 'none'>('loading')
-  const src = birthday.points.camera.photo
-  return (
-    <div className="memory">
-      {state !== 'none' && (
-        <img src={src} alt="Uma memória" onLoad={() => setState('ok')} onError={() => setState('none')} className={state === 'ok' ? 'is-in' : ''} />
-      )}
-      {state === 'none' && <div className="memory__placeholder">{birthday.points.camera.placeholder}</div>}
-    </div>
-  )
-}
-
 function GiftLines() {
   const [second, setSecond] = useState(false)
   useEffect(() => {
@@ -33,13 +20,6 @@ function GiftLines() {
 function Content({ id }: { id: PointId }) {
   const p = birthday.points
   if (id === 'gift') return <GiftLines />
-  if (id === 'camera')
-    return (
-      <>
-        <Photo />
-        <p className="message">{p.camera.message}</p>
-      </>
-    )
   return <p className="message">{p[id].message}</p>
 }
 

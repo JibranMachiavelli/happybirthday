@@ -5,9 +5,10 @@ import { Group, Vector3 } from 'three'
 import { useExperience } from '../../stores/useExperience'
 import { EGG } from '../layout'
 import { player } from '../runtime'
-import { heartGeo, starGeo } from './shared'
+import { starGeo } from './shared'
 
-function Heart() {
+// estrelinha que passa a acompanhar a personagem
+function Companion() {
   const ref = useRef<Group>(null!)
   const target = useRef(new Vector3()).current
   useFrame(({ clock }, dt) => {
@@ -19,15 +20,15 @@ function Heart() {
       player.pos.z + Math.sin(-player.yaw - 2.2) * 0.75,
     )
     ref.current.position.lerp(target, 1 - Math.exp(-dt * 2.5))
-    ref.current.rotation.y = Math.sin(t * 1.2) * 0.6
-    ref.current.scale.setScalar(0.55 + Math.sin(t * 3) * 0.04)
+    ref.current.rotation.y = t * 1.6
+    ref.current.scale.setScalar(0.4 + Math.sin(t * 3) * 0.03)
   })
   return (
     <group ref={ref} position={[EGG[0], 1, EGG[1]]}>
-      <mesh geometry={heartGeo}>
-        <meshStandardMaterial color="#000" emissive="#ff9fb8" emissiveIntensity={2.4} toneMapped={false} />
+      <mesh geometry={starGeo}>
+        <meshStandardMaterial color="#000" emissive="#cfe3ff" emissiveIntensity={2.4} toneMapped={false} />
       </mesh>
-      <Sparkles count={8} scale={0.8} size={2} speed={0.5} color="#ffd0dc" />
+      <Sparkles count={8} scale={0.8} size={2} speed={0.5} color="#e2eeff" />
     </group>
   )
 }
@@ -53,7 +54,7 @@ export function EasterEgg() {
           <Sparkles count={6} scale={0.9} position-y={0.6} size={1.6} speed={0.3} color="#cfe3ff" />
         </group>
       )}
-      {found && <Heart />}
+      {found && <Companion />}
     </>
   )
 }

@@ -4,10 +4,10 @@ import { EGG, POINTS, type V2 } from '../layout'
 import { player } from '../runtime'
 import { EasterEgg } from './EasterEgg'
 import { Gift } from './Gift'
-import { CameraMemory, FloatingStar, SpecialFlower } from './Points'
+import { BookPoint, FloatingStar, SpecialFlower } from './Points'
 import { Portal } from './Portal'
 
-const RADIUS: Record<Target, number> = { flower: 1.8, star: 1.9, camera: 1.9, gift: 1.9, portal: 2.6, egg: 1.5 }
+const RADIUS: Record<Target, number> = { flower: 1.8, star: 1.9, book: 1.9, gift: 1.9, portal: 2.6, egg: 1.5 }
 
 function InteractionManager() {
   useFrame(() => {
@@ -38,7 +38,7 @@ export function Discoveries() {
       <InteractionManager />
       <SpecialFlower />
       <FloatingStar />
-      <CameraMemory />
+      <BookPoint />
       <Gift />
       <Portal />
       <EasterEgg />

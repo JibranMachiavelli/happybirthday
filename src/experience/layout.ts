@@ -10,7 +10,7 @@ export const SPAWN: V2 = [0, 8]
 export const POINTS: Record<PointId | 'portal', V2> = {
   flower: [-6.2, 2.4],
   star: [6.6, 0.8],
-  camera: [-4.8, -6.4],
+  book: [-4.8, -6.4],
   gift: [4.8, -6.6],
   portal: [0, -10.4],
 }
@@ -52,7 +52,7 @@ export const PATHS: V2[][] = [
   [SPAWN, [0, 0]],
   [[0, 0], [-2.8, 1.6], POINTS.flower],
   [[0, 0], [3.2, -0.2], POINTS.star],
-  [[0, 0], [-2.2, -3.6], POINTS.camera],
+  [[0, 0], [-2.2, -3.6], POINTS.book],
   [[0, 0], [2.4, -3.8], POINTS.gift],
   [[0, 0], [0, -5], [0, -9.2]],
 ]
@@ -63,7 +63,7 @@ export const OBSTACLES: Circle[] = [
   ...ROCKS.map(([x, z, s]) => [x, z, s * 0.9] as Circle),
   ...LAMPS.map(([x, z]) => [x, z, 0.18] as Circle),
   [POINTS.flower[0], POINTS.flower[1], 0.3],
-  [POINTS.camera[0], POINTS.camera[1], 0.5],
+  [POINTS.book[0], POINTS.book[1], 0.5],
   [POINTS.gift[0], POINTS.gift[1], 0.55],
   [POINTS.portal[0] - 1.25, POINTS.portal[1], 0.3],
   [POINTS.portal[0] + 1.25, POINTS.portal[1], 0.3],

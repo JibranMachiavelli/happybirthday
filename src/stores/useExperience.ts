@@ -2,11 +2,11 @@ import { create } from 'zustand'
 import { birthday } from '../config/birthday'
 import { chime, setMuted } from '../lib/audio'
 
-export type PointId = 'flower' | 'star' | 'camera' | 'gift'
+export type PointId = 'flower' | 'star' | 'book' | 'gift'
 export type Target = PointId | 'portal' | 'egg'
 export type Phase = 'intro' | 'exploring' | 'final' | 'letter'
 
-export const POINT_IDS: PointId[] = ['flower', 'star', 'camera', 'gift']
+export const POINT_IDS: PointId[] = ['flower', 'star', 'book', 'gift']
 
 interface ExperienceState {
   phase: Phase

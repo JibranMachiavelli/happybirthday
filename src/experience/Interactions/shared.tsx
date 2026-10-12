@@ -58,17 +58,3 @@ function starShape(outer: number, inner: number) {
 export const starGeo = new ExtrudeGeometry(starShape(0.32, 0.14), {
   depth: 0.08, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.04, bevelSegments: 3,
 }).center()
-
-function heartShape() {
-  const s = new Shape()
-  s.moveTo(0, -0.3)
-  s.bezierCurveTo(-0.05, -0.22, -0.32, -0.08, -0.32, 0.1)
-  s.bezierCurveTo(-0.32, 0.26, -0.16, 0.34, 0, 0.2)
-  s.bezierCurveTo(0.16, 0.34, 0.32, 0.26, 0.32, 0.1)
-  s.bezierCurveTo(0.32, -0.08, 0.05, -0.22, 0, -0.3)
-  return s
-}
-
-export const heartGeo = new ExtrudeGeometry(heartShape(), {
-  depth: 0.1, bevelEnabled: true, bevelThickness: 0.06, bevelSize: 0.05, bevelSegments: 4, curveSegments: 16,
-}).center()

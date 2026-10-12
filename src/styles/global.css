@@ -444,43 +444,6 @@ kbd {
   filter: blur(0);
 }
 
-.memory {
-  width: min(50vw, 34dvh, 240px);
-  aspect-ratio: 1;
-  margin-bottom: 1.3rem;
-  padding: 10px 10px 34px;
-  background: #fbf7f0;
-  border-radius: 6px;
-  transform: rotate(-2deg);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  box-sizing: content-box;
-}
-
-.memory img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.8s;
-}
-
-.memory img.is-in {
-  opacity: 1;
-}
-
-.memory__placeholder {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #f1dfd6, #e9c9cf);
-  color: #6a5560;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.15rem;
-}
-
 /* ---------- sequência final ---------- */
 
 .veil {

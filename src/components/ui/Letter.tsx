@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { birthday } from '../../config/birthday'
+import { birthday, letterParagraphs } from '../../config/birthday'
 import { useExperience } from '../../stores/useExperience'
 
 export function Letter() {
@@ -15,14 +15,14 @@ export function Letter() {
     <div className={`letter ${open ? 'is-in' : ''}`} role="dialog" aria-modal="true" aria-hidden={!open} aria-label="Carta">
       <article className="letter__paper">
         <div className="letter__seal" aria-hidden>
-          ❤
+          ✦
         </div>
-        {birthday.letter.paragraphs.map((p, i) => (
+        {letterParagraphs.map((p, i) => (
           <p key={i} style={{ transitionDelay: `${0.35 + i * 0.12}s` }}>
             {p}
           </p>
         ))}
-        <p className="letter__sign" style={{ transitionDelay: `${0.35 + birthday.letter.paragraphs.length * 0.12}s` }}>
+        <p className="letter__sign" style={{ transitionDelay: `${0.35 + letterParagraphs.length * 0.12}s` }}>
           — {birthday.signature}
         </p>
         <button ref={btn} className="btn btn--ink" onClick={close} tabIndex={open ? 0 : -1}>

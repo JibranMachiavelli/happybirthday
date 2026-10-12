@@ -18,32 +18,28 @@ Para testar no celular na mesma rede, abra o endereço "Network" que aparece no 
 
 ## 3. Nome e mensagens
 
-Tudo fica em `src/config/birthday.ts`: nome, assinatura, textos da intro, dos pontos, da sequência final, da carta, cores e até as cores da personagem.
+Tudo fica em `src/config/birthday.ts`: nome, assinatura, textos da intro, dos 4 pontos (flor, estrela, livro, presente), da sequência final, da carta, cores e até as cores da personagem.
 
-## 4. Foto
-
-Coloque a imagem em `public/memories/photo-1.jpg`. Ela aparece no ponto da câmera (no painel e na moldura 3D). Sem ela, aparece "coloque uma foto aqui".
-
-## 5. Música
+## 4. Música
 
 Coloque o arquivo em `public/audio/background.mp3`. Toca em loop depois de clicar em "Entrar". Sem o arquivo, o site funciona normalmente (o final ainda toca uma caixinha de música sintetizada).
 
-## 6. Personagem própria (GLB)
+## 5. Personagem própria (GLB)
 
 Coloque o modelo em `public/models/person.glb`. Se existir, substitui a personagem procedural automaticamente. A altura é normalizada e animações com nomes parecidos com `idle` e `walk`/`run` são usadas sozinhas.
 
-## 7. Build
+## 6. Build
 
 ```bash
 npm run build   # gera dist/
 npm run preview # testa o build
 ```
 
-## 8. Publicar no GitHub Pages (grátis)
+## 7. Publicar no GitHub Pages (grátis)
 
 Já existe o workflow `.github/workflows/deploy.yml`. Uma vez só: no repositório, **Settings → Pages → Source: GitHub Actions**. A partir daí, cada push na `main` publica em `https://<usuario>.github.io/<repo>/`.
 
-## 9. Publicar na Vercel
+## 8. Publicar na Vercel
 
 ```bash
 npx vercel
