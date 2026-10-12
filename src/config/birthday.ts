@@ -69,6 +69,7 @@ export const birthday = {
       'Feliz aniversário! 🎉',
     ],
     close: 'fechar',
+    back: 'voltar pro jardim',
   },
 
   easterEgg: 'Você realmente foi procurar tudo 😂',
@@ -97,11 +98,11 @@ export const birthday = {
   // Personagem procedural (ignorado se existir person.glb)
   character: {
     skin: '#f7d9c6',
-    hair: '#6a4128',
+    hair: '#7a4a2c',
     eyes: '#3f9a63',
     top: '#f3ead9',
-    skirt: '#c9b7a6',
-    shoes: '#fbfaf7',
+    skirt: '#e3c4c2',
+    shoes: '#8a5a4e',
     accent: '#EFB8C8',
   },
 }

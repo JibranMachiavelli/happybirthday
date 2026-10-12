@@ -26,6 +26,7 @@ interface ExperienceState {
   setFinalStep: (n: number) => void
   openLetter: () => void
   closeLetter: () => void
+  backToWorld: () => void
   toggleMute: () => void
   showToast: (text: string) => void
 }
@@ -68,6 +69,7 @@ export const useExperience = create<ExperienceState>((set, get) => ({
   setFinalStep: (finalStep) => set({ finalStep }),
   openLetter: () => set({ phase: 'letter' }),
   closeLetter: () => set({ phase: 'final' }),
+  backToWorld: () => set({ phase: 'exploring', finalStep: 0, nearby: null }),
 
   toggleMute: () => {
     const muted = !get().muted

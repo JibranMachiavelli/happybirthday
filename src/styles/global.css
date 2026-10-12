@@ -630,9 +630,15 @@ kbd {
   color: #8a4a5d;
 }
 
+.letter__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
 .btn--ink {
-  display: block;
-  margin: 1.6rem auto 0;
   color: #2c2733;
   border-color: rgba(44, 39, 51, 0.2);
   background: transparent;

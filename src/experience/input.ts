@@ -2,5 +2,5 @@
 export const input = {
   keys: new Set<string>(),
   joy: { x: 0, y: 0 },
-  teleport: false,
+  teleport: null as 'cake' | 'garden' | null,
 }

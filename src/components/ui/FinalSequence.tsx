@@ -20,7 +20,7 @@ export function FinalSequence() {
     const k = reducedMotion ? 0.6 : 1
     const ids = [
       window.setTimeout(() => setVeil(true), 30),
-      window.setTimeout(() => (input.teleport = true), 1100),
+      window.setTimeout(() => (input.teleport = 'cake'), 1100),
       window.setTimeout(() => setVeil(false), 1400),
       ...TIMELINE.map((ms, i) =>
         window.setTimeout(() => {

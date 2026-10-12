@@ -16,6 +16,15 @@ export const cam = {
   snap: false,
 }
 
+export function teleportToGarden() {
+  // de volta perto do portal, de costas para ele
+  player.pos.set(0, 0, -7.6)
+  player.yaw = 0
+  player.inCakeArea = false
+  cam.yaw = Math.PI
+  cam.snap = true
+}
+
 export function teleportToCake() {
   player.pos.set(CAKE.x, 0, CAKE.z + 6.5)
   player.yaw = Math.PI

@@ -6,7 +6,7 @@ import { assetExists } from '../../lib/device'
 import { useExperience } from '../../stores/useExperience'
 import { ErrorBoundary } from '../../components/ErrorBoundary'
 import { CAKE, resolveCollisions } from '../layout'
-import { cam, input, player, teleportToCake } from '../runtime'
+import { cam, input, player, teleportToCake, teleportToGarden } from '../runtime'
 import { CharacterGLB } from './CharacterGLB'
 import { CharacterProcedural } from './CharacterProcedural'
 
@@ -31,8 +31,9 @@ export function Character() {
     const dt = Math.min(delta, 0.05)
     const s = useExperience.getState()
     if (input.teleport) {
-      input.teleport = false
-      teleportToCake()
+      if (input.teleport === 'cake') teleportToCake()
+      else teleportToGarden()
+      input.teleport = null
       vel.current.set(0, 0)
     }
     let mx = 0
