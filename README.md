@@ -39,7 +39,11 @@ npm run build   # gera dist/
 npm run preview # testa o build
 ```
 
-## 8. Publicar na Vercel
+## 8. Publicar no GitHub Pages (grátis)
+
+Já existe o workflow `.github/workflows/deploy.yml`. Uma vez só: no repositório, **Settings → Pages → Source: GitHub Actions**. A partir daí, cada push na `main` publica em `https://<usuario>.github.io/<repo>/`.
+
+## 9. Publicar na Vercel
 
 ```bash
 npx vercel

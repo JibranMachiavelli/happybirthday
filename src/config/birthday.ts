@@ -1,5 +1,8 @@
 // Tudo que é pessoal mora aqui. Edite à vontade.
 
+// arquivos em /public (funciona em subpasta, ex.: GitHub Pages)
+const asset = (path: string) => import.meta.env.BASE_URL + path
+
 export const birthday = {
   name: 'Nome',
   signature: 'Seu nome',
@@ -35,7 +38,7 @@ export const birthday = {
     },
     camera: {
       message: 'Uma memória mora aqui.',
-      photo: '/memories/photo-1.jpg',
+      photo: asset('memories/photo-1.jpg'),
       placeholder: 'coloque uma foto aqui',
       button: 'guardar ✨',
     },
@@ -77,9 +80,9 @@ export const birthday = {
   },
 
   assets: {
-    music: '/audio/background.mp3',
+    music: asset('audio/background.mp3'),
     musicVolume: 0.25,
-    model: '/models/person.glb',
+    model: asset('models/person.glb'),
   },
 
   colors: {
